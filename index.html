@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BAGGU</title>
+    <!-- GSAP cdn -->
+    <!-- 애니메이션 -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"
+      integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- gsap scrollto -->
+    <!-- 애니메이션에 화면이동 -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollToPlugin.min.js"
+      integrity="sha512-lZACdYsy0W98dOcn+QRNHDxFuhm62lfs8qK5+wPp7X358CN3f+ml49HpnwzTiXFzETs4++fADePDI+L2zwlm7Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- SWIPER cdn -->
+    <!-- SWIPER js -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.2.4/swiper-bundle.min.js"
+      integrity="sha512-Hvn3pvXhhG39kmZ8ue3K8hw8obT4rfLXHE5n+IWNCMkR6oV3cfkQNUQqVvX3fNJO/JtFeo/MfLmqp5bqAT+8qg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- SWIPER scss -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.2.4/swiper-bundle.min.css"
+      integrity="sha512-olodyt/aRzIO9o/gZkW0xrVyYDFtBZ+PjH/T/o74P4jLADOwHqyB8LGmcqbbiaWnlsn1VYEadotewGO3y4Y3fQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- xeicon -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <!-- css -->
+    <link rel="stylesheet" href="./css/main.css" />
+    <!-- js -->
+    <script src="./js/main.js"></script>
+  </head>
+
+  <body>
+    <!---------------------------------------------------------------
+      header
+    ------------------------------------------------------------- -->
+    <header class="header">
+      <ul class="gnb" id="gnb">
+        <li class="search">
+          <i class="xi-search" id="gnbsearch"></i>
+          <input
+            type="search"
+            name="searchbox"
+            id="gnbsearchbox"
+            class="searchbox"
+          />
+        </li>
+        <li class="logo">
+          <a href="./index.html">
+            <img src="./img/main_page/logo.png" alt="" />
+          </a>
+        </li>
+        <li>
+          <ul class="gnb_menu">
+            <li>
+              <i class="xi-cart-o"></i>
+            </li>
+            <li id="user_info">
+              <i class="xi-user-o"></i>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <!-- gnb -->
+      <section class="lnb_section" id="lnb_section">
+        <div class="lnb" id="lnb">
+          <ul class="lnb_menu">
+            <li><a href="./sub_page/sub_page_standard.html">FANNY PACK</a></li>
+            <li><a href="./sub_page/sub_page_standard.html">STANDARD</a></li>
+            <li><a href="./sub_page/sub_page_standard.html">BABY</a></li>
+            <li><a href="./sub_page/sub_page_standard.html">WINE BAG</a></li>
+            <li><a href="./sub_page/sub_page_standard.html">BIG</a></li>
+            <li><a href="./sub_page/sub_page_standard.html">DUCK</a></li>
+            <li><a href="./sub_page/sub_page_standard.html">POUCH&CASE</a></li>
+            <li><a href="./sub_page/sub_page_standard.html">CROSS BODY</a></li>
+            <li><a href="./sub_page/sub_page_standard.html">TOWEL</a></li>
+          </ul>
+        </div>
+      </section>
+      <!-- lnb -->
+
+      <div class="user_modal" id="user_modal">
+        <div class="user_container">
+          <div class="status">
+            <div class="close_btn" id="close_btn">
+              <i class="xi-close"></i>
+            </div>
+            <div class="login_stat">
+              <p>안녕하세요!</p>
+              <p>고객님은 현재 <span>'로그아웃'</span> 상태 입니다.</p>
+            </div>
+            <div class="btns">
+              <button class="login_btn">로그인</button>
+              <button class="join_btn">회원가입</button>
+            </div>
+          </div>
+
+          <div class="user_tab">
+            <div class="tab_name">
+              <div class="tab_name1" id="tab_name1">배송정보</div>
+              <div class="tab_name2" id="tab_name2">커뮤니티</div>
+            </div>
+            <div class="delivery_tab" id="delivery_tab">
+              <ul class="deliver">
+                <div class="deliver_my">나의 주문처리 현황 (3개월 기준)</div>
+                <ul class="deliver_stat">
+                  <li>
+                    <p>입금전</p>
+                    <span>0</span>
+                  </li>
+                  <li>
+                    <p>배송준비</p>
+                    <span>0</span>
+                  </li>
+                  <li>
+                    <p>배송중</p>
+                    <span>0</span>
+                  </li>
+                  <li>
+                    <p>배송완료</p>
+                    <span>0</span>
+                  </li>
+                </ul>
+                <ul class="deliver_itemstat">
+                  <li>
+                    <p>취소</p>
+                    <span>0</span>
+                  </li>
+                  <li>
+                    <p>교환</p>
+                    <span>0</span>
+                  </li>
+                  <li>
+                    <p>반품</p>
+                    <span>0</span>
+                  </li>
+                </ul>
+              </ul>
+              <div class="user_board">
+                <div>주문조회</div>
+                <div>회원정보</div>
+                <div>관심상품</div>
+                <div>적립금</div>
+                <div>쿠폰</div>
+                <div>게시물관리</div>
+                <div>배송주소록관리</div>
+                <div>정기배송관리</div>
+              </div>
+
+              <div class="user_history">
+                <div class="user_history_title">
+                  <p>최근 본 상품</p>
+                  <span>전체보기</span>
+                </div>
+                <div class="item_history">최근 본 상품 내역이 없습니다.</div>
+              </div>
+            </div>
+
+            <div class="community_tab" id="community_tab">
+              <div class="communityservice communitynotice">공지사항</div>
+              <div class="communityservice communityreview">REVIEW</div>
+              <div class="communityservice communityqna">상품Q&A</div>
+              <div class="communityservice communityevent">EVENT</div>
+              <div class="communityservice communityabout">ABOUT US</div>
+
+              <div class="customercenter">
+                <div class="center_title">CUSTOMER CENTER</div>
+                <div class="center_info">
+                  <h4>1588-8564</h4>
+                  <p>월요일~금요일 9:00 am ~ 6:00 pm</p>
+                  <p>(점심시간 12:00 am ~ 1:00 pm)</p>
+                  <p>토/일요일, 공휴일은 쉬어요</p>
+                  <p>전화상담이 어려울 경우 문의 게시판을 이용해주세요.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- user_modal -->
+    </header>
+    <!---------------------------------------------------------------
+      header
+    ------------------------------------------------------------- -->
+    <!---------------------------------------------------------------
+      main_visual
+      ------------------------------------------------------------- -->
+    <section class="main_visual">
+      <ul class="gnb_scroll" id="gnb_scroll">
+        <li class="search">
+          <!-- <i class="xi-bars" id="gnb_scroll_bar"></i>
+        <i class="xi-close" id="gnb_scroll_close"></i> -->
+          <i class="xi-search" id="scrollSearch"></i>
+          <input type="search" class="scrollSearchBox" id="scrollSearchBox" />
+        </li>
+        <li class="logo">
+          <a href="./index.html">
+            <img src="./img/main_page/logo1.png" alt="" />
+          </a>
+        </li>
+        <li>
+          <ul class="gnb_menu">
+            <li>
+              <i class="xi-cart-o"></i>
+            </li>
+            <li id="user_info_scroll">
+              <i class="xi-user-o"></i>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <!-- gnb_scroll -->
+      <!-- gnb_scroll -->
+
+      <div class="lnb_scroll" id="lnb_scroll">
+        <ul class="lnb_menu">
+          <li><a href="./sub_page/sub_page_standard.html">FANNY PACK</a></li>
+          <li><a href="./sub_page/sub_page_standard.html">STANDARD</a></li>
+          <li><a href="./sub_page/sub_page_standard.html">BABY</a></li>
+          <li><a href="./sub_page/sub_page_standard.html">WINE BAG</a></li>
+          <li><a href="./sub_page/sub_page_standard.html">BIG</a></li>
+          <li><a href="./sub_page/sub_page_standard.html">DUCK</a></li>
+          <li><a href="./sub_page/sub_page_standard.html">POUCH&CASE</a></li>
+          <li><a href="./sub_page/sub_page_standard.html">CROSS BODY</a></li>
+          <li><a href="./sub_page/sub_page_standard.html">TOWEL</a></li>
+        </ul>
+      </div>
+      <!-- gnb_scroll -->
+
+      <div>
+        <img src="./img/main_page/main_visulal.png" alt="" />
+      </div>
+    </section>
+    <!---------------------------------------------------------------
+      main_visual
+    ------------------------------------------------------------- -->
+    <!---------------------------------------------------------------
+      event
+    ------------------------------------------------------------- -->
+    <section class="event">
+      <div class="event_container">
+        <div class="event01">
+          <div class="event_img">
+            <img src="./img/main_page/event_img01.jpg" alt="" />
+          </div>
+          <h3>BAGGU를 MOMA 디자인 스토어에서 확인해보세요.</h3>
+          <p>8월 28일 까지 확인 가능합니다.</p>
+          <button class="btn">자세히 보기</button>
+        </div>
+        <div class="event02">
+          <div class="event_img">
+            <img src="./img/main_page/event_img02.jpg" alt="" />
+          </div>
+          <h3>뉴 썸머 플로럴</h3>
+          <p>여름의 햇살을 쬐고, 바람에게 인사해보세요.</p>
+          <button class="btn">지금 구매하기</button>
+        </div>
+        <div class="event03">
+          <div class="event_img">
+            <img src="./img/main_page/event_img03.jpg" alt="" />
+          </div>
+          <h3>트래블 파우치</h3>
+          <p>여행에서 물건을 잃어버리지 않을 방법은 여기에!</p>
+          <button class="btn">더 알아보기</button>
+        </div>
+      </div>
+    </section>
+    <!---------------------------------------------------------------
+      event
+    ------------------------------------------------------------- -->
+    <!---------------------------------------------------------------
+      best_items
+    ------------------------------------------------------------- -->
+    <section class="best_items">
+      <div class="best_container">
+        <div class="best_title">
+          <h3>BEST ITEM</h3>
+          <p>바꾸를 만나보세요</p>
+        </div>
+
+        <ul class="best_tab" id="best_tab">
+          <li class="change" id="best_bag_tab">BAGGU BAG</li>
+          <li id="best_pouch_tab">POUCH</li>
+          <li id="best_sprots_tab">SPORTS</li>
+        </ul>
+        <div class="best_item_set">
+          <div class="best_bag on" id="best_bag">
+            <div class="best_item">
+              <img src="./img/main_page/baby_img01.jpg" alt="" />
+              <div class="best_itemname">
+                <h3>바쿠 베이비 일렉트릭 스트로베리</h3>
+                <i class="xi-heart-o"></i>
+              </div>
+              <span>12,000원</span>
+              <p>10,900원</p>
+            </div>
+            <div class="best_item">
+              <img src="./img/main_page/baby_img02.jpg" alt="" />
+              <div class="best_itemname">
+                <h3>바쿠 베이비 우드 블럭 플로럴 블랙</h3>
+                <i class="xi-heart-o"></i>
+              </div>
+              <span>12,000원</span>
+              <p>10,900원</p>
+            </div>
+            <div class="best_item">
+              <img src="./img/main_page/baby_img03.jpg" alt="" />
+              <div class="best_itemname">
+                <h3>바쿠 베이비 라임로즈</h3>
+                <i class="xi-heart-o"></i>
+              </div>
+              <span>12,000원</span>
+              <p>10,900원</p>
+            </div>
+            <div class="best_item">
+              <img src="./img/main_page/baby_img04.jpg" alt="" />
+              <div class="best_itemname">
+                <h3>바쿠 베이비 와일드 데이지</h3>
+                <i class="xi-heart-o"></i>
+              </div>
+              <span>12,000원</span>
+              <p>10,900원</p>
+            </div>
+          </div>
+          <div class="best_pouch" id="best_pouch">
+            <div class="best_item">
+              <img src="./img/main_page/pouch_img01.jpg" alt="" />
+              <div class="best_itemname">
+                <h3>바쿠 돕 키트 맬러카이트</h3>
+                <i class="xi-heart-o"></i>
+              </div>
+              <span>38,000원</span>
+              <p>27,000원</p>
+            </div>
+            <div class="best_item">
+              <img src="./img/main_page/pouch_img02.jpg" alt="" />
+              <div class="best_itemname">
+                <h3>바쿠 돕 키트 와일드 선 플라워 블루</h3>
+                <i class="xi-heart-o"></i>
+              </div>
+              <span>38,000원</span>
+              <p>27,000원</p>
+            </div>
+            <div class="best_item">
+              <img src="./img/main_page/pouch_img03.jpg" alt="" />
+              <div class="best_itemname">
+                <h3>바쿠 돕 키트 스카이 해피</h3>
+                <i class="xi-heart-o"></i>
+              </div>
+              <span>38,000원</span>
+              <p>27,000원</p>
+            </div>
+            <div class="best_item">
+              <img src="./img/main_page/pouch_img04.jpg" alt="" />
+              <div class="best_itemname">
+                <h3>바쿠 돕 키트 오렌지 트리</h3>
+                <i class="xi-heart-o"></i>
+              </div>
+              <span>38,000원</span>
+              <p>27,000원</p>
+            </div>
+          </div>
+          <div class="best_sports" id="best_sports">
+            <div class="best_item">
+              <img src="./img/main_page/sports_img01.jpg" alt="" />
+              <div class="best_itemname">
+                <h3>바쿠 스포츠 베이 로렐</h3>
+                <i class="xi-heart-o"></i>
+              </div>
+              <span>45,000원</span>
+              <p>30,000원</p>
+            </div>
+            <div class="best_item">
+              <img src="./img/main_page/sports_img02.jpg" alt="" />
+              <div class="best_itemname">
+                <h3>바쿠 미디엄 인디고 트리피 체커</h3>
+                <i class="xi-heart-o"></i>
+              </div>
+              <span>55,000원</span>
+              <p>53,000원</p>
+            </div>
+            <div class="best_item">
+              <img src="./img/main_page/sports_img03.jpg" alt="" />
+              <div class="best_itemname">
+                <h3>바쿠 스포츠 크로스 바디</h3>
+                <i class="xi-heart-o"></i>
+              </div>
+              <span>45,000원</span>
+              <p>30,000원</p>
+            </div>
+            <div class="best_item">
+              <img src="./img/main_page/sports_img04.jpg" alt="" />
+              <div class="best_itemname">
+                <h3>바쿠 패니 인디고 트리피 체커</h3>
+                <i class="xi-heart-o"></i>
+              </div>
+              <span>45,000원</span>
+              <p>30,000원</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!---------------------------------------------------------------
+      best_items
+    ------------------------------------------------------------- -->
+    <!---------------------------------------------------------------
+      promotion
+    ------------------------------------------------------------- -->
+    <section class="promotion">
+      <div class="promotion_name">
+        <h3>Product Feature</h3>
+      </div>
+      <div class="promotion_container">
+        <div class="promotion_txt">
+          <div>
+            <h3 class="promotion_item">스탠다드 바꾸 세트</h3>
+            <p class="promotion_item_price">40,000원</p>
+            <p class="promotion_item_detail">
+              스탠다드 바쿠세트는 섬세하고 재사용 가능한 파우치 입니다.
+            </p>
+            <p class="promotion_item_detail">
+              각 세트는 세가지의 유니크한 프린트를 포함하고 있고 선물하기에 가장
+              이상적입니다.
+            </p>
+
+            <h5 class="promotion_item_pattern">
+              COLOR : <span id="pattern_name">일렉트릭 스트로베리즈</span>
+            </h5>
+
+            <ul class="promotion_pattern">
+              <li class="pattern">
+                <img
+                  src="./img/main_page/promotion1.png"
+                  class="promotion_pattern_img"
+                  alt="일렉트릭 스트로베리즈"
+                />
+              </li>
+              <li class="pattern">
+                <img
+                  src="./img/main_page/promotion2.png"
+                  class="promotion_pattern_img"
+                  alt="메달리온 플로랄"
+                />
+              </li>
+              <li class="pattern">
+                <img
+                  src="./img/main_page/promotion3.png"
+                  class="promotion_pattern_img"
+                  alt="플러피 캣"
+                />
+              </li>
+              <li class="pattern">
+                <img
+                  src="./img/main_page/promotion4.png"
+                  class="promotion_pattern_img"
+                  alt="옐로우 해피"
+                />
+              </li>
+              <li class="pattern">
+                <img
+                  src="./img/main_page/promotion5.png"
+                  class="promotion_pattern_img"
+                  alt="레이디버그 리프"
+                />
+              </li>
+              <li class="pattern">
+                <img
+                  src="./img/main_page/promotion6.png"
+                  class="promotion_pattern_img"
+                  alt="체크 멀티"
+                />
+              </li>
+              <li class="pattern">
+                <img
+                  src="./img/main_page/promotion7.png"
+                  class="promotion_pattern_img"
+                  alt="체커보드 갱"
+                />
+              </li>
+              <li class="pattern">
+                <img
+                  src="./img/main_page/promotion8.png"
+                  class="promotion_pattern_img"
+                  alt="데스크스탁 오렌지 스트로베리"
+                />
+              </li>
+            </ul>
+            <div class="promotion_btns">
+              <button class="promotion_btn btn_detail">자세히 보기</button>
+              <button class="promotion_btn btn_cart">장바구니 담기</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="promiotion_slide">
+          <div
+            class="swiper promiotion_slide1 promotion_active"
+            id="promotion01"
+          >
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide">
+                <img src="./img/main_page/promotion01-1.jpg" alt="" />
+              </li>
+              <li class="swiper-slide">
+                <img src="./img/main_page/promotion01-2.jpg" alt="" />
+              </li>
+              <li class="swiper-slide">
+                <img src="./img/main_page/promotion01-3.jpg" alt="" />
+              </li>
+            </ul>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+          <div class="swiper promiotion_slide2" id="promotion02">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide">
+                <img src="./img/main_page/promotion02-1.jpg" alt="" />
+              </li>
+              <li class="swiper-slide">
+                <img src="./img/main_page/promotion02-2.jpg" alt="" />
+              </li>
+              <li class="swiper-slide">
+                <img src="./img/main_page/promotion02-3.jpg" alt="" />
+              </li>
+            </ul>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+          <div class="swiper promiotion_slide3" id="promotion03">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide">
+                <img src="./img/main_page/promotion03-1.jpg" alt="" />
+              </li>
+              <li class="swiper-slide">
+                <img src="./img/main_page/promotion03-2.jpg" alt="" />
+              </li>
+              <li class="swiper-slide">
+                <img src="./img/main_page/promotion03-3.jpg" alt="" />
+              </li>
+            </ul>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+          <div class="swiper promiotion_slide4" id="promotion04">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide">
+                <img src="./img/main_page/promotion04-1.jpg" alt="" />
+              </li>
+              <li class="swiper-slide">
+                <img src="./img/main_page/promotion04-2.jpg" alt="" />
+              </li>
+              <li class="swiper-slide">
+                <img src="./img/main_page/promotion04-3.jpg" alt="" />
+              </li>
+            </ul>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+          <div class="swiper promiotion_slide5" id="promotion05">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide">
+                <img src="./img/main_page/promotion05-1.jpg" alt="" />
+              </li>
+              <li class="swiper-slide">
+                <img src="./img/main_page/promotion05-2.jpg" alt="" />
+              </li>
+              <li class="swiper-slide">
+                <img src="./img/main_page/promotion05-3.jpg" alt="" />
+              </li>
+            </ul>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+          <div class="swiper promiotion_slide6" id="promotion06">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide">
+                <img src="./img/main_page/promotion06-1.jpg" alt="" />
+              </li>
+              <li class="swiper-slide">
+                <img src="./img/main_page/promotion06-2.jpg" alt="" />
+              </li>
+              <li class="swiper-slide">
+                <img src="./img/main_page/promotion06-3.jpg" alt="" />
+              </li>
+            </ul>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+          <div class="swiper promiotion_slide7" id="promotion07">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide">
+                <img src="./img/main_page/promotion07-1.jpg" alt="" />
+              </li>
+              <li class="swiper-slide">
+                <img src="./img/main_page/promotion07-2.jpg" alt="" />
+              </li>
+              <li class="swiper-slide">
+                <img src="./img/main_page/promotion07-3.jpg" alt="" />
+              </li>
+            </ul>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+          <div class="swiper promiotion_slide8" id="promotion08">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide">
+                <img src="./img/main_page/promotion08-1.jpg" alt="" />
+              </li>
+              <li class="swiper-slide">
+                <img src="./img/main_page/promotion08-2.jpg" alt="" />
+              </li>
+              <li class="swiper-slide">
+                <img src="./img/main_page/promotion08-3.jpg" alt="" />
+              </li>
+            </ul>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!---------------------------------------------------------------
+      promotion
+    ------------------------------------------------------------- -->
+    <!---------------------------------------------------------------
+      brand_story
+    ------------------------------------------------------------- -->
+    <section class="brand_story">
+      <div class="brand_story_container">
+        <h3 class="brand_story_title">BRAND STORY</h3>
+        <p class="brand_story_subtitle">바꾸의 브랜드 스토리</p>
+
+        <ul class="brand_stories">
+          <li class="brand_story_item">
+            <div class="brand_story_img">
+              <img
+                src="./img/main_page/brand_img01.jpg"
+                alt="brand_story_img01"
+              />
+              <div class="brand_hover">VOL.01 BAGGU MAKES BAGS</div>
+            </div>
+            <h4>VOL.01 BAGGU MAKES BAGS</h4>
+            <p>바쿠는 가방을 만듭니다</p>
+          </li>
+          <li class="brand_story_item">
+            <div class="brand_story_img">
+              <img
+                src="./img/main_page/brand_img02.jpg"
+                alt="brand_story_img02"
+              />
+              <div class="brand_hover">
+                VOL.02 BAGS FOR PEOPLE AND THE PLANET
+              </div>
+            </div>
+            <h4>VOL.02 BAGS FOR PEOPLE AND THE PLANET</h4>
+            <p>사람과 지구를 위한 가방</p>
+          </li>
+          <li class="brand_story_item">
+            <div class="brand_story_img">
+              <img
+                src="./img/main_page/brand_img03.jpg"
+                alt="brand_story_img03"
+              />
+              <div class="brand_hover">
+                VOL.03 BAGS FOR PEOPLE AND THE PLANET
+              </div>
+            </div>
+            <h4>VOL.03 BAGS FOR PEOPLE AND THE PLANET</h4>
+            <p>사람과 지구를 위한 가방 2</p>
+          </li>
+          <li class="brand_story_item">
+            <div class="brand_story_img">
+              <img
+                src="./img/main_page/brand_img04.jpg"
+                alt="brand_story_img04"
+              />
+              <div class="brand_hover">VOL.04 DO THE RIGHT THING</div>
+            </div>
+            <h4>VOL.04 DO THE RIGHT THING</h4>
+            <p>바쿠는 올바른 일을 합니다</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!---------------------------------------------------------------
+      brand_story
+    ------------------------------------------------------------- -->
+    <!---------------------------------------------------------------
+      rolling_banner
+    ------------------------------------------------------------- -->
+    <section class="banner">
+      <a href="https://www.instagram.com/baggu/" target="_blank">
+        <div class="rolling_banner">
+          <ul class="rolling_banner_top">
+            <li>
+              <img src="./img/main_page/animation_img01.png" alt="" />
+            </li>
+            <li>
+              <p>@BAGGU</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img02.jpg" alt="" />
+            </li>
+            <li>
+              <p>@BAGGU</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img03.png" alt="" />
+            </li>
+            <li>
+              <p>@BAGGU</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img04.png" alt="" />
+            </li>
+            <li>
+              <p>@BAGGU</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img05.png" alt="" />
+            </li>
+            <li>
+              <p>@BAGGU</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img01.png" alt="" />
+            </li>
+            <li>
+              <p>@BAGGU</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img02.jpg" alt="" />
+            </li>
+            <li>
+              <p>@BAGGU</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img03.png" alt="" />
+            </li>
+            <li>
+              <p>@BAGGU</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img04.png" alt="" />
+            </li>
+            <li>
+              <p>@BAGGU</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img05.png" alt="" />
+            </li>
+            <li>
+              <p>@BAGGU</p>
+            </li>
+          </ul>
+          <ul class="rolling_banner_bottom">
+            <li>
+              <p>FOLLOW</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img06.png" alt="" />
+            </li>
+            <li>
+              <p>FOLLOW</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img07.png" alt="" />
+            </li>
+            <li>
+              <p>FOLLOW</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img08.png" alt="" />
+            </li>
+            <li>
+              <p>FOLLOW</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img09.png" alt="" />
+            </li>
+            <li>
+              <p>FOLLOW</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img10.png" alt="" />
+            </li>
+            <li>
+              <p>FOLLOW</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img06.png" alt="" />
+            </li>
+            <li>
+              <p>FOLLOW</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img07.png" alt="" />
+            </li>
+            <li>
+              <p>FOLLOW</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img08.png" alt="" />
+            </li>
+            <li>
+              <p>FOLLOW</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img09.png" alt="" />
+            </li>
+            <li>
+              <p>FOLLOW</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img10.png" alt="" />
+            </li>
+          </ul>
+        </div>
+        <div class="rolling_banner_clone">
+          <ul class="rolling_banner_top">
+            <li>
+              <img src="./img/main_page/animation_img01.png" alt="" />
+            </li>
+            <li>
+              <p>@BAGGU</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img02.jpg" alt="" />
+            </li>
+            <li>
+              <p>@BAGGU</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img03.png" alt="" />
+            </li>
+            <li>
+              <p>@BAGGU</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img04.png" alt="" />
+            </li>
+            <li>
+              <p>@BAGGU</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img05.png" alt="" />
+            </li>
+            <li>
+              <p>@BAGGU</p>
+            </li>
+          </ul>
+          <ul class="rolling_banner_bottom">
+            <li>
+              <p>FOLLOW</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img06.png" alt="" />
+            </li>
+            <li>
+              <p>FOLLOW</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img07.png" alt="" />
+            </li>
+            <li>
+              <p>FOLLOW</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img08.png" alt="" />
+            </li>
+            <li>
+              <p>FOLLOW</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img09.png" alt="" />
+            </li>
+            <li>
+              <p>FOLLOW</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img10.png" alt="" />
+            </li>
+          </ul>
+        </div>
+        <div class="rolling_banner_clone01">
+          <ul class="rolling_banner_top">
+            <li>
+              <img src="./img/main_page/animation_img01.png" alt="" />
+            </li>
+            <li>
+              <p>@BAGGU</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img02.jpg" alt="" />
+            </li>
+            <li>
+              <p>@BAGGU</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img03.png" alt="" />
+            </li>
+            <li>
+              <p>@BAGGU</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img04.png" alt="" />
+            </li>
+            <li>
+              <p>@BAGGU</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img05.png" alt="" />
+            </li>
+            <li>
+              <p>@BAGGU</p>
+            </li>
+          </ul>
+          <ul class="rolling_banner_bottom">
+            <li>
+              <p>FOLLOW</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img06.png" alt="" />
+            </li>
+            <li>
+              <p>FOLLOW</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img07.png" alt="" />
+            </li>
+            <li>
+              <p>FOLLOW</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img08.png" alt="" />
+            </li>
+            <li>
+              <p>FOLLOW</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img09.png" alt="" />
+            </li>
+            <li>
+              <p>FOLLOW</p>
+            </li>
+            <li>
+              <img src="./img/main_page/animation_img10.png" alt="" />
+            </li>
+          </ul>
+        </div>
+      </a>
+    </section>
+    <!---------------------------------------------------------------
+      rolling_banner
+    ------------------------------------------------------------- -->
+    <!---------------------------------------------------------------
+      footer  
+      ------------------------------------------------------------- -->
+    <footer class="footer">
+      <div class="upper_footer">
+        <ul>
+          <li>회사소개</li>
+          <li>이용약관</li>
+          <li>개인정보처리방침</li>
+          <li>이용안내</li>
+        </ul>
+        <ul>
+          <li>공지사항</li>
+          <li>REVIEW</li>
+          <li>EVENT</li>
+          <li>ABOUT US</li>
+        </ul>
+        <div class="contact">
+          <h3>CONTACT :</h3>
+          <h4>1588-8564</h4>
+          <p>평일 : 09:00 ~ 18:00 (점심시간 12:00 ~ 13:00)</p>
+          <p>고객센터 운영시간에 순차적으로 답변드리겠습니다.</p>
+          <p>토요일, 일요일, 공휴일 휴무</p>
+          <p>통화량이 많을때는 문의 게시판으로 문의주세요.</p>
+        </div>
+        <div class="footer_btn">
+          <button class="board_btn">문의 게시판</button>
+          <button class="qna_btn">자주 묻는 질문</button>
+        </div>
+      </div>
+      <div class="down_footer">
+        <img src="./img/footer_logo.png" alt="" />
+      </div>
+    </footer>
+    <!---------------------------------------------------------------
+      footer  
+    ------------------------------------------------------------- -->
+    <div class="windowbtn">
+      <div class="top_btn">
+        <i class="xi-angle-up"></i>
+      </div>
+      <div class="bottom_btn">
+        <i class="xi-angle-down"></i>
+      </div>
+    </div>
+  </body>
+</html>

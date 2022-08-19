@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BAGGU - STANDARD Farmers Market</title>
+  <!-- GSAP cdn -->
+  <!-- 애니메이션 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"
+    integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- gsap scrollto -->
+  <!-- 애니메이션에 화면이동 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollToPlugin.min.js"
+    integrity="sha512-lZACdYsy0W98dOcn+QRNHDxFuhm62lfs8qK5+wPp7X358CN3f+ml49HpnwzTiXFzETs4++fADePDI+L2zwlm7Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- SWIPER cdn -->
+  <!-- SWIPER js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.2.4/swiper-bundle.min.js"
+    integrity="sha512-Hvn3pvXhhG39kmZ8ue3K8hw8obT4rfLXHE5n+IWNCMkR6oV3cfkQNUQqVvX3fNJO/JtFeo/MfLmqp5bqAT+8qg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- SWIPER scss -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.2.4/swiper-bundle.min.css"
+    integrity="sha512-olodyt/aRzIO9o/gZkW0xrVyYDFtBZ+PjH/T/o74P4jLADOwHqyB8LGmcqbbiaWnlsn1VYEadotewGO3y4Y3fQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- xeicon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css" />
+  <!-- css -->
+  <link rel="stylesheet" href="./css/detail_page_standardFarmersMarket.css" />
+  <!-- js -->
+  <script src="./js/detail_page_standardFarmersMarket.js"></script>
+</head>
+
+<body>
+    <!---------------------------------------------------------------
+      header
+    ------------------------------------------------------------- -->
+    <header class="header">
+      <ul class="gnb" id="gnb">
+        <li class="search">
+          <i class="xi-search" id="gnbsearch"></i>
+          <input type="search" name="searchbox" id="gnbsearchbox" class="searchbox">
+        </li>
+        <li class="logo">
+          <a href="../index.html">
+            <img src="../img/main_page/logo.png" alt="" />
+          </a>
+        </li>
+        <li>
+          <ul class="gnb_menu">
+            <li>
+              <i class="xi-cart-o"></i>
+            </li>
+            <li id="user_info">
+              <i class="xi-user-o"></i>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <!-- gnb -->
+  
+      <section class="lnb_section" id="lnb_section">
+        <div class="lnb" id="lnb">
+          <ul class="lnb_menu">
+            <li><a href="#">FANNY PACK</a></li>
+            <li><a href="../sub_page/sub_page_standard.html">STANDARD</a></li>
+            <li><a href="#">BABY</a></li>
+            <li><a href="#">WINE BAG</a></li>
+            <li><a href="#">BIG</a></li>
+            <li><a href="#">DUCK</a></li>
+            <li><a href="#">POUCH&CASE</a></li>
+            <li><a href="#">CROSS BODY</a></li>
+            <li><a href="#">TOWEL</a></li>
+          </ul>
+        </section>
+      </div>
+      <!-- lnb -->
+
+    <div class="user_modal" id="user_modal">
+      <div class="user_container">
+        <div class="status">
+          <div class="close_btn" id="close_btn">
+            <i class="xi-close"></i>
+          </div>
+          <div class="login_stat">
+            <p>안녕하세요!</p>
+            <p>고객님은 현재 <span>'로그아웃'</span> 상태 입니다.</p>
+          </div>
+          <div class="btns">
+            <button class="login_btn">로그인</button>
+            <button class="join_btn">회원가입</button>
+          </div>
+        </div>
+
+        <div class="user_tab">
+          <div class="tab_name">
+            <div class="tab_name1" id="tab_name1">배송정보</div>
+            <div class="tab_name2" id="tab_name2">커뮤니티</div>
+          </div>
+          <div class="delivery_tab" id="delivery_tab">
+            <ul class="deliver">
+              <div class="deliver_my">나의 주문처리 현황 (3개월 기준)</div>
+              <ul class="deliver_stat">
+                <li>
+                  <p>입금전</p>
+                  <span>0</span>
+                </li>
+                <li>
+                  <p>배송준비</p>
+                  <span>0</span>
+                </li>
+                <li>
+                  <p>배송중</p>
+                  <span>0</span>
+                </li>
+                <li>
+                  <p>배송완료</p>
+                  <span>0</span>
+                </li>
+              </ul>
+              <ul class="deliver_itemstat">
+                <li>
+                  <p>취소</p>
+                  <span>0</span>
+                </li>
+                <li>
+                  <p>교환</p>
+                  <span>0</span>
+                </li>
+                <li>
+                  <p>반품</p>
+                  <span>0</span>
+                </li>
+              </ul>
+            </ul>
+            <div class="user_board">
+              <div>주문조회</div>
+              <div>회원정보</div>
+              <div>관심상품</div>
+              <div>적립금</div>
+              <div>쿠폰</div>
+              <div>게시물관리</div>
+              <div>배송주소록관리</div>
+              <div>정기배송관리</div>
+            </div>
+
+            <div class="user_history">
+              <div class="user_history_title">
+                <p>최근 본 상품</p>
+                <span>전체보기</span>
+              </div>
+              <div class="item_history">최근 본 상품 내역이 없습니다.</div>
+            </div>
+          </div>
+
+          <div class="community_tab" id="community_tab">
+            <div class="communityservice communitynotice">공지사항</div>
+            <div class="communityservice communityreview">REVIEW</div>
+            <div class="communityservice communityqna">상품Q&A</div>
+            <div class="communityservice communityevent">EVENT</div>
+            <div class="communityservice communityabout">ABOUT US</div>
+
+            <div class="customercenter">
+              <div class="center_title">CUSTOMER CENTER</div>
+              <div class="center_info">
+                <h4>1588-8564</h4>
+                <p>월요일~금요일 9:00 am ~ 6:00 pm</p>
+                <p>(점심시간 12:00 am ~ 1:00 pm)</p>
+                <p>토/일요일, 공휴일은 쉬어요</p>
+                <p>전화상담이 어려울 경우 문의 게시판을 이용해주세요.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- user_modal -->
+  </header>
+  <!---------------------------------------------------------------
+      header
+    ------------------------------------------------------------- -->
+
+  <!---------------------------------------------------------------
+      contents
+    ------------------------------------------------------------- -->
+    <div class="pur_wrap">
+      <div class="purchaseitm">
+        <div class="itm_name">바쿠 스탠다드 파머스 마켓</div>
+        <div class="itm_price">
+          <p><span id="totalprice">15000</span>원</p>
+          <div class="purchase_btn">구매하기</div>
+        </div>
+      </div>
+    </div>
+  <div class="wrap">
+    <nav class="page_history">
+      <ul>
+        <li><a href="../index.html">홈</a></li>
+        <li>&nbsp;>&nbsp;</li>
+        <li><a href="../sub_page/sub_page_standard.html">스탠다드</a></li>
+        <li>&nbsp;>&nbsp;</li>
+        <li><a href="./detail_page_standardFarmersMarket.html">바쿠 스탠다드 파머스 마켓</a></li>
+      </ul>
+    </nav>
+
+    <div class="shop">
+      <div class="swiper">
+        <div class="shop_itemimg swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="../img/detail_page/standard_img02.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="../img/detail_page/standard_img02-1.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="../img/detail_page/standard_img02-2.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="../img/detail_page/standard_img02-3.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="../img/detail_page/standard_img02-4.jpg" alt="" />
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+
+      <div class="item">
+        <div class="item_name">
+          <h3>바쿠 스탠다드 파머스 마켓</h3>
+          <div>
+            <i class="xi-heart-o"></i>
+          </div>
+        </div>
+        <p class="item_price">15,000 KRW</p>
+        <ul class="count">
+          <li id="itm_minus"><i class="xi-minus"></i></li>
+          <li id="item_count">1</li>
+          <li id="itm_plus"><i class="xi-plus"></i></li>
+        </ul>
+        <div class="total_price">
+          <div class="total" >
+            <p>총 상품금액 :</p>
+            <p><span id="total_price">15000</span>원</p>
+          </div>
+          <div class="purchase">
+            <div class="cart_btn">장바구니</div>
+            <div class="purc_btn">구매하기</div>
+          </div>
+        </div>
+        <div class="shipping_info">
+          <div class="shipping">배송정보</div>
+          <ul class="ship_info">
+            <li>
+              <h3>배송 방법</h3>
+              <p>택배</p>
+            </li>
+            <li>
+              <h3>배송 지역</h3>
+              <p>전국지역</p>
+            </li>
+            <li>
+              <h3>배송 비용</h3>
+              <p>3,000원</p>
+            </li>
+            <li>
+              <h3>배송 기간</h3>
+              <p>3일 ~ 7일</p>
+            </li>
+            <li>
+              <h3>배송 안내</h3>
+              <p>
+                산간벽지나 도서지방은 별도의 추가금액을 지불하셔야 하는 겨웅가
+                있습니다. 고객님께서 주문하신 상품은 입금 확인 후 배송해
+                드립니다. 다만, 상품종류에 따라서 상품의 배송이 다소 지연될 수
+                있습니다.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="product_detail" id="product_detail">
+      <div class="product_detail_title">
+        상세 정보
+      </div>
+      <img src="../img/detail_page/detailStandardFarmersMarket.jpg" alt="" />
+    </div>
+
+    <div class="payment_info" id="payment_info">
+      <h3>상품결제정보</h3>
+      <p class="info_space">
+        고액결제의 경우 안전을 위해 카드사에서 확인전화를 드릴 수도 있습니다.
+        확인과정에서 도난 카드의 사용이나 타인 명의의 주문등 정상적인 주문이
+        아니라고 판단될 경우 임의로 주문을 보류 또는 취소할 수 있습니다.
+      </p>
+      <p>
+        무통장 입금은 상품 구매 대금은 PC뱅킹, 인터넷뱅킹, 텔레뱅킹 혹은
+        가까운 은행에서 직접 입금하시면 됩니다.
+      </p>
+      <p>
+        주문시 입력한 입금자명과 실제입금자의 성명이 반드시 일치하여야 하며,
+        7일 이내로 입금을 하셔야 하며 입금되지 않은 주문은 자동취소 됩니다.
+      </p>
+    </div>
+    <div class="refund_info">
+      <h3>교환 및 반품정보</h3>
+      <p>교환 및 반품 주소</p>
+      <p class="info_space">
+        - [04158] 서울특별시 마포구 마포대로 49 (도화동) 성우빌딩 1107-1109호
+      </p>
+      <p>교환 및 반품이 가능한 경우</p>
+      <p>
+        - 계약내용에 관한 서면을 받은 날부터 7일. 단, 그 서면을 받은 때보다
+        재화등의 공급이 늦게 이루어진 경우에는 재화등을 공급받거나 재화등의
+        공급이 시작된 날부터 7일 이내
+      </p>
+      <p class="info_space">
+        - 공급받으신 상품 및 용역의 내용이 표시.광고 내용과 다르거나
+        계약내용과 다르게 이행된 때에는 당해 재화 등을 공급받은 날 부터
+        3월이내, 그사실을 알게 된 날 또는 알 수 있었던 날부터 30일이내
+      </p>
+      <p>교환 및 반품이 불가능한 경우</p>
+      <p>
+        - 이용자에게 책임 있는 사유로 재화 등이 멸실 또는 훼손된 경우(다만,
+        재화 등의 내용을 확인하기 위하여 포장 등을 훼손한 경우에는 청약철회를
+        할 수 있습니다)
+      </p>
+      <p>
+        - 이용자의 사용 또는 일부 소비에 의하여 재화 등의 가치가 현저히 감소한
+        경우
+      </p>
+      <p>
+        - 시간의 경과에 의하여 재판매가 곤란할 정도로 재화등의 가치가 현저히
+        감소한 경우
+      </p>
+      <p>- 복제가 가능한 재화등의 포장을 훼손한 경우</p>
+      <p>
+        - 개별 주문 생산되는 재화 등 청약철회시 판매자에게 회복할 수 없는
+        피해가 예상되어 소비자의 사전 동의를 얻은 경우
+      </p>
+      <p class="info_space">
+        - 디지털 콘텐츠의 제공이 개시된 경우, (다만, 가분적 용역 또는 가분적
+        디지털콘텐츠로 구성된 계약의 경우 제공이 개시되지 아니한 부분은
+        청약철회를 할 수 있습니다.)
+      </p>
+      <p>
+        ※ 고객님의 마음이 바뀌어 교환, 반품을 하실 경우 상품반송 비용은
+        고객님께서 부담하셔야 합니다.
+      </p>
+      <p>(색상 교환, 사이즈 교환 등 포함)</p>
+    </div>
+    <div class="related_product" id="related_product">
+      <h4 class="rel_title">관련 상품</h4>
+      <div class="rel_swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="../img/detail_page/review_img01.jpg" alt="" />
+            <h4>바쿠 베이비 핑크 랍스터</h4>
+            <p>15,000원</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="../img/detail_page/review_img02.jpg" alt="" />
+            <h4>바쿠 스탠다드 땡큐 해피</h4>
+            <p>15,000원</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="../img/detail_page/review_img03.jpg" alt="" />
+            <h4>바쿠 돕 키트 웨이비 스트라이프 - 핑크 앤 그린</h4>
+            <p>30,000원</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="../img/detail_page/review_img04.jpg" alt="" />
+            <h4>바쿠 스탠다드 옐로우 해피</h4>
+            <p>15,000원</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="../img/detail_page/review_img05.jpg" alt="" />
+            <h4>바쿠 스탠다드 세일러 스트라이프</h4>
+            <p>15,000원</p>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+
+    <div class="review" id="review">
+      <h4>리뷰 작성</h4>
+      <div class="review_board">
+        <p>리뷰가없습니다. <br />리뷰를 작성해보세요.</p>
+        <div class="review_btn">상품 리뷰 작성하기</div>
+      </div>
+    </div>
+  </div>
+  <!---------------------------------------------------------------
+      contents
+    ------------------------------------------------------------- -->
+
+   <!---------------------------------------------------------------
+      footer  
+    ------------------------------------------------------------- -->
+    <footer class="footer">
+      <div class="upper_footer">
+        <ul>
+          <li>회사소개</li>
+          <li>이용약관</li>
+          <li>개인정보처리방침</li>
+          <li>이용안내</li>
+        </ul>
+        <ul>
+          <li>공지사항</li>
+          <li>REVIEW</li>
+          <li>EVENT</li>
+          <li>ABOUT US</li>
+        </ul>
+        <div class="contact">
+          <h3>CONTACT :</h3>
+          <h4>1588-8564</h4>
+          <p>평일 : 09:00 ~ 18:00 (점심시간 12:00 ~ 13:00)</p>
+          <p>고객센터 운영시간에 순차적으로 답변드리겠습니다.</p>
+          <p>토요일, 일요일, 공휴일 휴무</p>
+          <p>통화량이 많을때는 문의 게시판으로 문의주세요.</p>
+        </div>
+        <div class="footer_btn">
+          <button class="board_btn">문의 게시판</button>
+          <button class="qna_btn">자주 묻는 질문</button>
+        </div>
+      </div>
+      <div class="down_footer">
+        <img src="../img/footer_logo.png" alt="">
+      </div>
+    </footer>
+    <!---------------------------------------------------------------
+        footer  
+      ------------------------------------------------------------- -->
+    <!---------------------------------------------------------------
+        windowbtn  
+      ------------------------------------------------------------- -->
+      <div class="windowbtn" id="windowbtn">
+        <div class="top_btn">
+          <i class="xi-angle-up"></i>
+        </div>
+        <div class="bottom_btn">
+          <i class="xi-angle-down"></i>
+        </div>
+      </div>
+      <!---------------------------------------------------------------
+          windowbtn  
+        ------------------------------------------------------------- -->
+      <!---------------------------------------------------------------
+          page_nav  
+        ------------------------------------------------------------- -->
+        <ul class="page_nav" id="page_nav">
+          <li class="To_product_detailInfo page_nav_on" id="To_product_detailInfo">상품 상세 정보</li>
+          <li class="To_exchange" id="To_exchange">배송 / 교환 및 반품 안내</li>
+          <li class="To_related" id="To_related">관련 상품</li>
+          <li class="To_review" id="To_review">상품 리뷰 (0) </li>
+        </ul>
+      <!---------------------------------------------------------------
+          page_nav  
+        ------------------------------------------------------------- -->
+      
+</body>
+
+</html>
